@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class ProductInventoryParser {
+
+    public static void parseInventoryRecord(String csvLine) {
+        // Break line using comma separation bounds
+        String[] fields = csvLine.split(",");
+
+        // Validate that exactly 3 fields are present
+        if (fields.length != 3) {
+            System.out.println("Invalid Record");
+            return;
+        }
+
+        String productName = fields[0].trim();
+        String sku = fields[1].trim();
+        String qty = fields[2].trim();
+
+        System.out.println("Product: " + productName + " | SKU: " + sku + " | Qty: " + qty);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter CSV line (ProductName,SKU,Quantity): ");
+        String inputCsv = scanner.nextLine();
+        
+        parseInventoryRecord(inputCsv);
+        
+        scanner.close();
+    }
+}
