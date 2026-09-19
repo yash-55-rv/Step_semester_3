@@ -20,7 +20,7 @@ class BookInventory {
     }
 }
 
-public class Main {
+public class BookInventorySystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
